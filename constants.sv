@@ -34,7 +34,11 @@ typedef enum logic[3:0]{ // ALU operation select
    F_B           = 4'b0011,
    F_A_PLUS_2    = 4'b0100,
    F_A_LT_B      = 4'b0101,
-   // 4'b0110 reserved for future operations
+   // 4'b0110 USED for future operations
+   // I WILL USE THIS RESERVED OPERTION 0110
+   
+   F_A_PLUS_B_C  = 4'b0110,
+
    // 4'b0111 reserved for future operations
    F_A_NOT       = 4'b1000,
    F_A_AND_B     = 4'b1001,
