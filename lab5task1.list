@@ -1,0 +1,73 @@
+addr data   label     opcode  operands
+---- ----  --------   ------  --------
+5000 0004  LENGTH     .DW     $4      
+5002 0000  SUM        .DW     $0000   
+5004 0000             .DW     $0000   
+5A00 0001  ARRAY      .DW     $1      
+5A02 0001             .DW     $1      
+5A04 0002             .DW     $2      
+5A06 0003             .DW     $3      
+5A08 0005             .DW     $5      
+5A0A 0008             .DW     $8      
+5A0C 000D             .DW     $D      
+5A0E 0015             .DW     $15     
+5A10 0000             .DW     $0      
+5A12 0000             .DW     $0      
+0010 3040             LI      R1      
+0012 0000                     $0      
+0014 3080             LI      R2      
+0016 0000                     $0      
+0018 30C0             LI      R3      
+001A 0000                     $0      
+001C 2900             LW      R4 R0   
+001E 5000                     LENGTH  
+0020 C320             SLLI    R4 R4   
+0022 0002                     $2      
+0024 3140             LI      R5      
+0026 0000                     $0      
+0028 3080             LI      R2      
+002A 0002                     $2      
+002C 5022  LOWERS     SLT     R0 R4 R2
+002E D800             BRNZ            
+0030 004C                     LDONE   
+0032 2950             LW      R5 R2   
+0034 5A00                     ARRAY   
+0036 004D             ADD     R1 R1 R5
+0038 A800             BRC             
+003A 0040                     CARRY   
+003C F800             BRA             
+003E 0044                     NONE1   
+0040 30D8  CARRY      ADDI    R3 R3   
+0042 0001                     $1      
+0044 3090  NONE1      ADDI    R2 R2   
+0046 0004                     $4      
+0048 F800             BRA             
+004A 002C                     LOWERS  
+004C 3140  LDONE      LI      R5      
+004E 0002                     $2      
+0050 3829             SW      R5 R1   
+0052 5002                     SUM     
+0054 2140             MV      R5 R0   
+0056 3040             LI      R1      
+0058 0000                     $0      
+005A 3080             LI      R2      
+005C 0000                     $0      
+005E 5022  UPPER      SLT     R0 R4 R2
+0060 D800             BRNZ            
+0062 0072                     UDONE   
+0064 2950             LW      R5 R2   
+0066 5A00                     ARRAY   
+0068 004D             ADD     R1 R1 R5
+006A 3090             ADDI    R2 R2   
+006C 0004                     $4      
+006E F800             BRA             
+0070 005E                     UPPER   
+0072 3801  UDONE      SW      R0 R1   
+0074 5002                     SUM     
+0076 2040             MV      R1 R0   
+0078 2840             LW      R1 R0   
+007A 5002                     SUM     
+007C 004B             ADD     R1 R1 R3
+007E 3801             SW      R0 R1   
+0080 5002                     SUM     
+0082 FE00  DONE       STOP            

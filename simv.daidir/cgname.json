@@ -1,0 +1,74 @@
+{
+    "_vcs_unit__3932432237": [
+        "_vcs_unit__3932432237",
+        "gGYYF",
+        "module",
+        1
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        2
+    ],
+    "memory1024x16": [
+        "memory1024x16",
+        "LBGWb",
+        "module",
+        7
+    ],
+    "memory1024x16_program": [
+        "memory1024x16_program",
+        "LTm6Y",
+        "module",
+        8
+    ],
+    "SevenSegmentDigit": [
+        "SevenSegmentDigit",
+        "wDpck",
+        "module",
+        9
+    ],
+    "SevenSegmentControl": [
+        "SevenSegmentControl",
+        "pjySW",
+        "module",
+        10
+    ],
+    "comb_write_reg": [
+        "comb_write_reg",
+        "TiIVQ",
+        "module",
+        11
+    ],
+    "memory_synthesis": [
+        "memory_synthesis",
+        "wrad1",
+        "module",
+        4
+    ],
+    "memory_synthesis_quartus": [
+        "memory_synthesis_quartus",
+        "DccRB",
+        "module",
+        5
+    ],
+    "RISC240_top": [
+        "RISC240_top",
+        "zRShV",
+        "module",
+        3
+    ],
+    "SSegDisplayDriver": [
+        "SSegDisplayDriver",
+        "DqiHZ",
+        "module",
+        6
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        12
+    ]
+}
