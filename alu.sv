@@ -32,9 +32,12 @@
 module alu (
    output logic [15:0] out,
    output logic [3:0]  condCodes,
+   input logic prev_carry,
    input [15:0]      inA,
    input [15:0]      inB,
-   input  alu_op_t      opcode);
+   input  alu_op_t      opcode
+   
+   );
 
    logic Z, C, N, V;
 

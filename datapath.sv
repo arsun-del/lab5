@@ -85,7 +85,7 @@ module datapath (
                              .sel(cPts.srcB));
 
    alu alu_dp(.out(aluResult), .condCodes(newCC), .inA(aluSrcA), .inB(aluSrcB),
-              .opcode(cPts.alu_op));
+              .opcode(cPts.alu_op) .prev_carry(condCodes[2])); // addedd new prev_carry
 
    logic [7:0] dest_out;
    decoder #(8) reg_load_decoder(.I(cPts.dest),
