@@ -51,6 +51,12 @@ module alu (
             {C, out} = inA + inB;                     // A+B
             V = (inA[15] & inB[15] & ~out[15]) | (~inA[15] & ~inB[15] & out[15]);
          end
+
+         F_A_PLUS_B_C : begin
+            {C, out} = inA + inB + prev_carry;       // A+B + prev_carry
+            V = (inA[15] & inB[15] & ~out[15]) | (~inA[15] & ~inB[15] & out[15]); // this probably needs something
+         end
+         
          F_A_MINUS_B : begin
             out = inA - inB;                          // A-B (set carry below)
             C = (inB >= inA);
