@@ -47,12 +47,15 @@ module datapath (
    logic [3:0]  newCC;
    logic loadReg_L, loadPC_L, loadMDR_L, writeMD_L, loadMAR_L, loadIR_L;
    tri   [15:0] newMDR;
+   logic hisel;
 
    // Assign wires
    assign loadMDR_L = writeMD_L & cPts.re_L;
-   assign selRD  = ir[8:6];
-   assign selRS1 = ir[5:3];
-   assign selRS2 = ir[2:0];
+   // build muxes on these select control points
+   assign hisel = (cPts.alu_op == 4'b0110); // idk
+   assign selRD  = (hisel)? ir[8:6]+1 : ir[8:6];
+   assign selRS1 = (hisel)? ir[5:3]+1 : ir[5:3];
+   assign selRS2 = (hisel)? ir[2:0]+1 : ir[2:0];
 
    assign memAddr = {marOut, 1'b0};
 
